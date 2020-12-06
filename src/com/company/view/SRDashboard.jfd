@@ -1,0 +1,206 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.9" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 5
+		} ) {
+			name: "this"
+			"alwaysOnTop": true
+			"minimumSize": new java.awt.Dimension( 720, 39 )
+			"background": new java.awt.Color( 255, 255, 255, 255 )
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JSplitPane", new FormLayoutManager( class javax.swing.JSplitPane ) ) {
+				name: "splitPane1"
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"minimumSize": new java.awt.Dimension( 750, 87 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "\ud835\udd4a\ud835\udd52\ud835\udd5d\ud835\udd56\ud835\udd64 \ud835\udd44\ud835\udd52\ud835\udd5f\ud835\udd52\ud835\udd58\ud835\udd56\ud835\udd5e\ud835\udd56\ud835\udd5f\ud835\udd65"
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 31, false )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/Untitled.png" )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "left"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+					"$columnCount": 5
+					"$rowCount": 3
+				} ) {
+					name: "panel1"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Logged in as"
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"row": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "UserLabel"
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 1
+						"row": 1
+						"colSpan": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "LogOutButton"
+						"text": "Logout"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "LogOutButtonActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"row": 2
+						"colSpan": 5
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "right"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"anchor": 1
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label16"
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 14
+				"$rowCount": 4
+			} ) {
+				name: "panel2"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "AddClient"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/addclient.png" )
+					"preferredSize": new java.awt.Dimension( 50, 50 )
+					"maximumSize": new java.awt.Dimension( 50, 50 )
+					"minimumSize": new java.awt.Dimension( 100, 100 )
+					"horizontalAlignment": 2
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "AddClientMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "                  "
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 2
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "EditClient"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/editclient.png" )
+					"horizontalAlignment": 0
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "EditClientMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 5
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "                  "
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 7
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "RemoveClient"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/removeclient.png" )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "RemoveClientMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 10
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Add Client"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "Edit Client"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 5
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label7"
+					"text": "Remove Client"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 10
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label17"
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 5
+					"row": 2
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 2
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 14
+				"$rowCount": 2
+			} ) {
+				name: "panel4"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "addSale"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/adddeal.png" )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "addSaleMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"minimumSize": new java.awt.Dimension( 100, 100 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label14"
+					"text": "                  "
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 2
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "editSale"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/editdeal.png" )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 5
+					"minimumSize": new java.awt.Dimension( 100, 100 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label15"
+					"text": "                  "
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 7
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "deleteSale"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/removedeal.png" )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 10
+					"minimumSize": new java.awt.Dimension( 100, 100 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label8"
+					"text": "Add Sale"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label9"
+					"text": "Edit Sale"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 5
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label10"
+					"text": "Delete Sale"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 10
+					"row": 1
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 3
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 130, 40 )
+			"size": new java.awt.Dimension( 720, 465 )
+		} )
+	}
+}

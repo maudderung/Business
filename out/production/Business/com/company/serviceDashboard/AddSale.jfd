@@ -1,0 +1,166 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.9" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 2
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"title": "Add Sale"
+			"minimumSize": new java.awt.Dimension( 400, 290 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 8
+				"$rowCount": 9
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Add a sale"
+					"font": new java.awt.Font( "Tw Cen MT", 0, 23 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"colSpan": 8
+					"row": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Product"
+					"font": &Font0 new java.awt.Font( "Tw Cen MT", 0, 14 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 3
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "productCombo"
+					"minimumSize": new java.awt.Dimension( 150, 30 )
+					addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "productComboItemStateChanged", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 3
+					"row": 3
+					"anchor": 8
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Quantity"
+					"font": #Font0
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 4
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+					"$columnCount": 2
+					"$rowCount": 1
+				} ) {
+					name: "panel4"
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "quantityField"
+						"maximumSize": new java.awt.Dimension( 50, 2147483647 )
+						"minimumSize": new java.awt.Dimension( 50, 30 )
+						"preferredSize": new java.awt.Dimension( 50, 30 )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"anchor": 8
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "existingLabel"
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 1
+					} )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 3
+					"row": 4
+					"anchor": 8
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Day"
+					"font": #Font0
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 5
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+					"$columnCount": 5
+					"$rowCount": 1
+				} ) {
+					name: "panel3"
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "dayField"
+						"minimumSize": new java.awt.Dimension( 30, 30 )
+						"preferredSize": new java.awt.Dimension( 30, 30 )
+						addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "dayFieldKeyTyped", true ) )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label6"
+						"text": "Month"
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 1
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "monthField"
+						"preferredSize": new java.awt.Dimension( 30, 30 )
+						"minimumSize": new java.awt.Dimension( 30, 30 )
+						addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "monthFieldKeyTyped", true ) )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 2
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label7"
+						"text": "Year"
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 3
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "yearField"
+						"preferredSize": new java.awt.Dimension( 50, 30 )
+						"minimumSize": new java.awt.Dimension( 50, 30 )
+						addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "yearFieldKeyTyped", true ) )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"column": 4
+					} )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 3
+					"row": 5
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Client ID"
+					"font": #Font0
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 6
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "clientIDcombo"
+					"minimumSize": new java.awt.Dimension( 150, 30 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 3
+					"row": 6
+					"anchor": 8
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 2
+				"$rowCount": 4
+			} ) {
+				name: "panel2"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "addButton"
+					"text": "Add"
+					"minimumSize": new java.awt.Dimension( 120, 30 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "backButton"
+					"text": "Back"
+					"minimumSize": new java.awt.Dimension( 120, 30 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 1
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 1
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 360, 365 )
+		} )
+	}
+}
