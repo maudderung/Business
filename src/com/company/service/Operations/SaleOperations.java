@@ -49,8 +49,29 @@ public class SaleOperations {
         }
         return sale;
     }*/
-
-    public static ArrayList<Sales> readSales(JFrame frame) {
+ public static ArrayList<Sales> readSales(JFrame frame) {
+     Sales sale;
+     String query = "SELECT * FROM sales ";
+     ArrayList<Sales> salesList = new ArrayList<>();
+     try {
+         Connection MyCon = MySQLConnection.getConnectionProducts();
+         PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+         ResultSet rs = preparedStatement.executeQuery();
+         while (rs.next()) {
+             sale = new Sales();
+             sale.setId(rs.getInt("id"));
+             sale.setProduct(rs.getString("product"));
+             sale.setQuantity(rs.getInt("quantity"));
+             sale.setDateOfSale(rs.getString("dateOfSale"));
+             sale.setClientId(rs.getInt("clientId"));
+             salesList.add(sale);
+         }
+     } catch (Exception e) {
+         JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+     }
+     return salesList;
+ }
+    public static ArrayList<Sales> readSalesByEmployee(JFrame frame) {
         Sales sale;
         String query = "SELECT * FROM sales WHERE employeeName='" + LoginSession.UserName + "'";
         ArrayList<Sales> salesList = new ArrayList<>();
@@ -72,7 +93,50 @@ public class SaleOperations {
         }
         return salesList;
     }
-
+    public static ArrayList<Sales> readSalesByEmployee(JFrame frame,String employee) {
+        Sales sale;
+        String query = "SELECT * FROM sales WHERE employeeName='" +employee + "'";
+        ArrayList<Sales> salesList = new ArrayList<>();
+        try {
+            Connection MyCon = MySQLConnection.getConnectionProducts();
+            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                sale = new Sales();
+                sale.setId(rs.getInt("id"));
+                sale.setProduct(rs.getString("product"));
+                sale.setQuantity(rs.getInt("quantity"));
+                sale.setDateOfSale(rs.getString("dateOfSale"));
+                sale.setClientId(rs.getInt("clientId"));
+                salesList.add(sale);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+        }
+        return salesList;
+    }
+    public static ArrayList<Sales> readSalesByTime(JFrame frame,String fromDate, String toDate) {
+        Sales sale;
+        String query = "SELECT * FROM sales WHERE (dateOfSale BETWEEN '" +fromDate + "' AND '"+toDate+"')";
+        ArrayList<Sales> salesList = new ArrayList<>();
+        try {
+            Connection MyCon = MySQLConnection.getConnectionProducts();
+            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                sale = new Sales();
+                sale.setId(rs.getInt("id"));
+                sale.setProduct(rs.getString("product"));
+                sale.setQuantity(rs.getInt("quantity"));
+                sale.setDateOfSale(rs.getString("dateOfSale"));
+                sale.setClientId(rs.getInt("clientId"));
+                salesList.add(sale);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+        }
+        return salesList;
+    }
   /*  public static void editSale(JFrame frame,Sales sale, int id, int newQuantity, String date) {
         if (ProductOperations.editQuantityProduct(frame, newQuantity, sale.getProduct(),id)) {
             String query = "UPDATE sales " +

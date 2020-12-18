@@ -100,27 +100,25 @@ public class ProductOperations {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
         }
     }
-    public static boolean nameValidity(String name){
-        if(name.length()==0){
-            return false;
-        }else{
-            return true;
-        }
-    }
+
     public static void addEditedProduct(JFrame frame, double price, int quantity,int id) {
            String query = "UPDATE product SET price="+
                     "'"+price+"',quantity="+
                     "'"+quantity+"' WHERE id="+id;
-        try {
-            Connection MyCon = MySQLConnection.getConnectionProducts();
-            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
-            preparedStatement.execute(query);
-            JOptionPane.showMessageDialog(frame,"Done.");
-        } catch (SQLIntegrityConstraintViolationException exc) {
-            JOptionPane.showMessageDialog(frame, "Product already exists");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
-        }
+           if(price!=0) {
+               try {
+                   Connection MyCon = MySQLConnection.getConnectionProducts();
+                   PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+                   preparedStatement.execute(query);
+                   JOptionPane.showMessageDialog(frame, "Done.");
+               } catch (SQLIntegrityConstraintViolationException exc) {
+                   JOptionPane.showMessageDialog(frame, "Product already exists");
+               } catch (Exception e) {
+                   JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+               }
+           }else{
+               JOptionPane.showMessageDialog(frame,"Price can't be 0.");
+           }
     }
 
     public static boolean updateQuantityProduct(JFrame frame, int quantitySale, String product) {
@@ -139,7 +137,17 @@ public class ProductOperations {
         return false;
     }
 
-
+    public static void deleteProduct(JFrame frame, int id) {
+        String query = "DELETE FROM product WHERE id=" + id;
+        try {
+            Connection MyCon = MySQLConnection.getConnectionProducts();
+            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+            preparedStatement.execute(query);
+            JOptionPane.showMessageDialog(frame,"Done.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+        }
+    }
 /*    public static boolean editQuantityProduct(JFrame frame, int newQuantity, String product, int id) {
         int quantityDifference,quantityCalculated=0;
         Sales sale = SaleOperations.getSale(frame, id);

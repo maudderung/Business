@@ -75,4 +75,12 @@ public class Clients {
                 " ; Email: " + email +
                 "]";
     }
+
+    public String printClient() {
+        return "[" +
+                "ID: " + id +
+                " ; " + firstname +
+                " " + lastname +
+                "]";
+    }
 }

@@ -8,8 +8,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import com.company.SRserviceDashboard.SRDashboard;
+import com.company.adminServiceDashboard.AdminDashboard;
 import com.company.service.LoginSession;
-import com.company.service.Operations;
 import net.miginfocom.swing.*;
 
 /**
@@ -22,11 +23,11 @@ public class Login extends JFrame {
 
     private void loginButtonActionPerformed(ActionEvent e) {
         // TODO add your code here
-        Operations operations = new Operations();
+        LoginSession ls = new LoginSession();
         try {
             String usernameStr = usernameField.getText();
             String passwordStr = new String(passwordField.getPassword());
-            if (operations.isLoggedIn(usernameStr, passwordStr, this)) {
+            if (ls.isLoggedIn(usernameStr, passwordStr, this)) {
                 if (LoginSession.UserType.equals("Admin")) {
                     new AdminDashboard().setVisible(true);
                 } else {
