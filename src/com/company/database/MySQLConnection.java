@@ -26,4 +26,11 @@ public class MySQLConnection {
         Connection MyCon = DriverManager.getConnection(url, user, password);
         return MyCon;
     }
+    public static Connection getConnectionEmployees() throws Exception {
+        String url = "jdbc:mysql://localhost:3306/employees?autoReconnect=true&useSSL=false";
+        String user = "root";
+        String password = "adminaccess";
+        Connection MyCon = DriverManager.getConnection(url, user, password);
+        return MyCon;
+    }
 }

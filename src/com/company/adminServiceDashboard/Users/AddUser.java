@@ -9,6 +9,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import com.company.adminServiceDashboard.AdminDashboard;
+import com.company.service.Encryption;
 import com.company.service.LogOut;
 import com.company.service.Operations.UserOperations;
 import com.intellij.uiDesigner.core.*;
@@ -24,7 +25,10 @@ public class AddUser extends JFrame {
     private void AddButtonActionPerformed(ActionEvent e) {
         String userType=(String)userTypeCombo.getSelectedItem();
         String username=userField.getText();
-        String password=new String(passwordField.getPassword());
+        String password= Encryption.encryptPass(new String(passwordField.getPassword()));
+        if(userType.equals("Sales Representative")){
+            UserOperations.storeEmployeeName(this,username);
+        }
         UserOperations.addUser(this,userType,username,password);
     }
 

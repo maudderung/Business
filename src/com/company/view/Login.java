@@ -10,6 +10,7 @@ import javax.swing.*;
 
 import com.company.SRserviceDashboard.SRDashboard;
 import com.company.adminServiceDashboard.AdminDashboard;
+import com.company.service.Encryption;
 import com.company.service.LoginSession;
 import net.miginfocom.swing.*;
 
@@ -22,11 +23,10 @@ public class Login extends JFrame {
     }
 
     private void loginButtonActionPerformed(ActionEvent e) {
-        // TODO add your code here
         LoginSession ls = new LoginSession();
         try {
             String usernameStr = usernameField.getText();
-            String passwordStr = new String(passwordField.getPassword());
+            String passwordStr=Encryption.encryptPass(new String(passwordField.getPassword()));
             if (ls.isLoggedIn(usernameStr, passwordStr, this)) {
                 if (LoginSession.UserType.equals("Admin")) {
                     new AdminDashboard().setVisible(true);

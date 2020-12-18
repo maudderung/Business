@@ -32,7 +32,18 @@ public class UserOperations {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
         }
     }
-
+    public static void storeEmployeeName(JFrame frame, String name) {
+        String query = "INSERT INTO sr(name) VALUE('"+name+"')";
+        try {
+            Connection MyCon = MySQLConnection.getConnectionEmployees();
+            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+            preparedStatement.execute(query);
+        } catch (SQLIntegrityConstraintViolationException exc) {
+            JOptionPane.showMessageDialog(frame, "User already exists");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
+        }
+    }
     public static ArrayList<Users> readUsers(JFrame frame) {
         Users user;
         ArrayList<Users> userList = new ArrayList<>();
@@ -55,13 +66,13 @@ public class UserOperations {
     }
     public static ArrayList<String> readEmployees(JFrame frame) {
         ArrayList<String> employees = new ArrayList<>();
-        String query = "SELECT * FROM login WHERE Usertype='Sales Representative'";
+        String query = "SELECT name FROM sr";
         try {
-            Connection MyCon = MySQLConnection.getConnectionLogin();
+            Connection MyCon = MySQLConnection.getConnectionEmployees();
             PreparedStatement preparedStatement = MyCon.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                employees.add((rs.getString("Username")));
+                employees.add((rs.getString("name")));
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
