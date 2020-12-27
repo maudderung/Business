@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.9" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -162,6 +162,13 @@ new FormModel {
 					"column": 7
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "FacebookShare"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/facebook.png" )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "FacebookShareMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 12
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label8"
 					"text": "Add Sale"
 					"font": &Font0 new java.awt.Font( "Tw Cen MT", 0, 14 )
@@ -175,6 +182,14 @@ new FormModel {
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"row": 1
 					"column": 7
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label11"
+					"text": "Share a product"
+					"font": #Font0
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 1
+					"column": 12
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 3

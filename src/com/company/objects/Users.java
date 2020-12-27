@@ -4,7 +4,7 @@ public class Users {
     private String userType;
     private String userName;
     private String password;
-    //hash funckiq
+
     public Users(){}
 
     public Users(String userType, String userName, String password){

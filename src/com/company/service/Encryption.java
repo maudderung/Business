@@ -1,9 +1,5 @@
 package com.company.service;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
@@ -18,7 +14,7 @@ public class Encryption {
             byte[] passBytes = pass.getBytes();
             md.reset();
             byte[] digested = md.digest(passBytes);
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             for(int i=0;i<digested.length;i++){
                 sb.append(Integer.toHexString(0xff & digested[i]));
             }

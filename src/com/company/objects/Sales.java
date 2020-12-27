@@ -1,7 +1,5 @@
 package com.company.objects;
 
-import com.company.service.LoginSession;
-
 public class Sales {
     private int id;
     private String product;
@@ -51,14 +49,6 @@ public class Sales {
 
     public int getClientId() {
         return clientId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getDateOfSale() {
-        return dateOfSale;
     }
 
     public String getProduct() {

@@ -1,11 +1,7 @@
 package com.company.service.Operations;
 
 import com.company.database.MySQLConnection;
-import com.company.objects.Clients;
 import com.company.objects.Products;
-import com.company.objects.Sales;
-import com.company.service.Operations.*;
-import com.company.service.Validator;
 
 import javax.swing.*;
 import java.sql.*;
@@ -67,20 +63,20 @@ public class ProductOperations {
         }
         return quantity;
     }
-    public static String getProductName(JFrame frame,int id) {
-        String query = "SELECT name FROM products.product WHERE id="+id;
-        String name="";
+    public static double getProductPrice(JFrame frame,String product) {
+        String query = "SELECT price FROM products.product WHERE name='"+product+"'";
+        double price=0;
         try {
             Connection MyCon = MySQLConnection.getConnectionProducts();
             PreparedStatement preparedStatement = MyCon.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-               name=rs.getString("name");
+               price=rs.getDouble("price");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
         }
-        return name;
+        return price;
     }
 
     public static void addProduct(JFrame frame, String name, double price,int quantity) {
@@ -148,30 +144,5 @@ public class ProductOperations {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
         }
     }
-/*    public static boolean editQuantityProduct(JFrame frame, int newQuantity, String product, int id) {
-        int quantityDifference,quantityCalculated=0;
-        Sales sale = SaleOperations.getSale(frame, id);
-        if (sale.getQuantity() > newQuantity) {
-            quantityDifference = (sale.getQuantity()) - newQuantity;
-            quantityCalculated = (getQuantityProduct(frame, product)) + quantityDifference;
-        } else if (sale.getQuantity() < newQuantity) {
-            quantityDifference = newQuantity - (sale.getQuantity());
-            quantityCalculated = (getQuantityProduct(frame, product)) - quantityDifference;
-        }
-        else if (sale.getQuantity() == newQuantity) {
-            return true;
-        }
-        String query = "UPDATE product SET quantity=" + quantityCalculated + " WHERE name='" + product + "'";
-        try {
-            Connection MyCon = MySQLConnection.getConnectionProducts();
-            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
-            preparedStatement.execute(query);
-            return true;
-        } catch (DataTruncation dte) {
-            JOptionPane.showMessageDialog(frame, "Can't sell more items than in stock.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
-        }
-        return false;
-    }*/
+
 }

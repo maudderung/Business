@@ -1,7 +1,5 @@
 package com.company.objects;
 
-import javax.xml.namespace.QName;
-
 public class Products {
     private int id;
     private String name;
@@ -22,18 +20,6 @@ public class Products {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getId() {

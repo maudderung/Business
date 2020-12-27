@@ -15,7 +15,7 @@ public class LoginSession {
     public boolean isLoggedIn(String username, String password, JFrame frame) {
         try {
             Connection MyCon = MySQLConnection.getConnectionLogin();
-            String mySQLQuery = "SELECT userType from login WHERE Username= '" +
+            String mySQLQuery = "SELECT userType,Username from login WHERE Username= '" +
                     username +
                     "' AND Password='" +
                     password +
@@ -24,7 +24,7 @@ public class LoginSession {
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 LoginSession.UserType = rs.getString("userType");
-                LoginSession.UserName = username;
+                LoginSession.UserName = rs.getString("Username");
                 return true;
             }
         } catch (Exception e) {

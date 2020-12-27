@@ -2,7 +2,6 @@ package com.company.service;
 
 import com.company.SRserviceDashboard.SRDashboard;
 import com.company.adminServiceDashboard.AdminDashboard;
-import com.company.service.LoginSession;
 import com.company.view.Login;
 
 import javax.swing.*;

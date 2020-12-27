@@ -31,8 +31,8 @@ public class EditProduct extends JFrame {
     }
 
     private void EditButtonActionPerformed(ActionEvent e) {
-        int quantity = 0;
-        double price = 0;
+        int quantity;
+        double price;
         String combo =(String) productCombo.getSelectedItem();
         String id = combo.substring( 0, combo.indexOf(":"));
         int comboId=Integer.parseInt(id);
@@ -48,7 +48,7 @@ public class EditProduct extends JFrame {
 
     private void comboInit(){
         productCombo.removeAllItems();
-        ArrayList<Products> productsList= new ArrayList<>();
+        ArrayList<Products> productsList;
         productsList=ProductOperations.returnProducts(this);
         for (Products c : productsList) {
             productCombo.addItem(c.toString());

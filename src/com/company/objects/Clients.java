@@ -8,14 +8,6 @@ public class Clients {
     private String tel;
     private String email;
 
-   /* public Clients(int id, String firstname, String lastname, String address, String tel){
-        this.id=id;
-        this.firstname=firstname;
-        this.lastname=lastname;
-        this.address=address;
-        this.tel=tel;
-    }*/
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -73,14 +65,6 @@ public class Clients {
                 " ; Address: " + address +
                 " ; Telephone number: " + tel +
                 " ; Email: " + email +
-                "]";
-    }
-
-    public String printClient() {
-        return "[" +
-                "ID: " + id +
-                " ; " + firstname +
-                " " + lastname +
                 "]";
     }
 }

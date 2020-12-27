@@ -1,10 +1,10 @@
 package com.company.service.Operations;
 
 import com.company.database.MySQLConnection;
-import com.company.objects.Sales;
 import com.company.objects.Users;
+import com.company.service.Encryption;
 import com.company.service.LoginSession;
-import com.restfb.types.User;
+
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -14,6 +14,19 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 public class UserOperations {
+
+    public static void adminInitialization() {
+        String password= Encryption.encryptPass("admin");
+        String query = "INSERT INTO login(UserType, Username, Password) VALUES('Admin', 'admin', "+"'"+password+"')";
+        try {
+            Connection MyCon = MySQLConnection.getConnectionLogin();
+            PreparedStatement preparedStatement = MyCon.prepareStatement(query);
+            preparedStatement.execute(query);
+        } catch (SQLIntegrityConstraintViolationException exc) {
+        } catch (Exception e) {
+            System.out.println("Database error: "+ e.getMessage());
+        }
+    }
 
     public static void addUser(JFrame frame, String userType, String userName, String password) {
         String query = "INSERT INTO login(UserType, Username, Password) VALUES(" +
@@ -81,7 +94,7 @@ public class UserOperations {
     }
 
     public static void removeUser(JFrame frame, String userName, String userType) {
-        if (!LoginSession.UserName.equals(userName) && !LoginSession.UserType.equals(userType)) {
+        if (!LoginSession.UserName.equals(userName)) {
             String query = "DELETE FROM login WHERE userType=" +
                     "'" + userType + "' AND Username=" +
                     "'" + userName + "'";

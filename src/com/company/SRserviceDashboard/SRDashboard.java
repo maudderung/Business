@@ -58,8 +58,14 @@ public class SRDashboard extends JFrame {
     }
 
     private void ViewSalesMouseClicked(MouseEvent e) {
-        com.company.SRserviceDashboard.Sales.ViewSales viewSale=new ViewSales();
+        ViewSales viewSale=new ViewSales();
         OpenMenu.SRviewSale(this,viewSale);
+    }
+
+
+    private void FacebookShareMouseClicked(MouseEvent e) {
+        FacebookShare facebookShare=new FacebookShare();
+        OpenMenu.FacebookShare(this,facebookShare);
     }
 
     private void initComponents() {
@@ -86,8 +92,10 @@ public class SRDashboard extends JFrame {
         addSale = new JLabel();
         label14 = new JLabel();
         ViewSales = new JLabel();
+        FacebookShare = new JLabel();
         label8 = new JLabel();
         label9 = new JLabel();
+        label11 = new JLabel();
 
         //======== this ========
         setAlwaysOnTop(true);
@@ -110,12 +118,13 @@ public class SRDashboard extends JFrame {
 
             //======== panel1 ========
             {
-                panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-                border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER
-                , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font
-                .BOLD ,12 ), java. awt. Color. red) ,panel1. getBorder( )) ); panel1. addPropertyChangeListener (
-                new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order"
-                .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+                panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
+                . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing
+                .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
+                Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
+                ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
+                public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName (
+                ) ) )throw new RuntimeException( ) ;} } );
                 panel1.setLayout(new GridLayoutManager(3, 5, new Insets(0, 0, 0, 0), -1, -1));
 
                 //---- label1 ----
@@ -300,6 +309,20 @@ public class SRDashboard extends JFrame {
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 null, null, null));
 
+            //---- FacebookShare ----
+            FacebookShare.setIcon(new ImageIcon(getClass().getResource("/Images/facebook.png")));
+            FacebookShare.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    FacebookShareMouseClicked(e);
+                }
+            });
+            panel4.add(FacebookShare, new GridConstraints(0, 12, 1, 1,
+                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                null, null, null));
+
             //---- label8 ----
             label8.setText("Add Sale");
             label8.setFont(new Font("Tw Cen MT", Font.PLAIN, 14));
@@ -313,6 +336,15 @@ public class SRDashboard extends JFrame {
             label9.setText("View Sales");
             label9.setFont(new Font("Tw Cen MT", Font.PLAIN, 14));
             panel4.add(label9, new GridConstraints(1, 7, 1, 1,
+                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                null, null, null));
+
+            //---- label11 ----
+            label11.setText("Share a product");
+            label11.setFont(new Font("Tw Cen MT", Font.PLAIN, 14));
+            panel4.add(label11, new GridConstraints(1, 12, 1, 1,
                 GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -351,7 +383,9 @@ public class SRDashboard extends JFrame {
     private JLabel addSale;
     private JLabel label14;
     private JLabel ViewSales;
+    private JLabel FacebookShare;
     private JLabel label8;
     private JLabel label9;
+    private JLabel label11;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

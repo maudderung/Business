@@ -3,6 +3,7 @@ package com.company.service;
 import com.company.SRserviceDashboard.Clients.AddClientMenu;
 import com.company.SRserviceDashboard.Clients.DeleteClient;
 import com.company.SRserviceDashboard.Clients.EditClient;
+import com.company.SRserviceDashboard.FacebookShare;
 import com.company.SRserviceDashboard.Sales.AddSale;
 import com.company.SRserviceDashboard.Sales.ViewSales;
 import com.company.adminServiceDashboard.Product.AddProducts;
@@ -71,6 +72,10 @@ public class OpenMenu {
         dashboard.setVisible(true);
     }
     public static void AdminViewSalesTime(JFrame context, AdminViewSalesTime dashboard){
+        context.setVisible(false);
+        dashboard.setVisible(true);
+    }
+    public static void FacebookShare(JFrame context, FacebookShare dashboard){
         context.setVisible(false);
         dashboard.setVisible(true);
     }

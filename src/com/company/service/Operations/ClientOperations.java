@@ -5,13 +5,19 @@ import com.company.objects.Clients;
 import com.company.service.Validator;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ClientOperations {
+
+    public static void getInfo(Clients client, ResultSet rs) throws SQLException {
+        client.setId(rs.getInt("id"));
+        client.setFirstname(rs.getString("firstname"));
+        client.setLastname(rs.getString("lastname"));
+        client.setAddress(rs.getString("address"));
+        client.setEmail(rs.getString("email"));
+        client.setTel(rs.getString("tel"));
+    }
 
     public static void addClient(String query, JFrame frame) {
         try {
@@ -46,12 +52,7 @@ public class ClientOperations {
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 client = new Clients();
-                client.setId(rs.getInt("id"));
-                client.setFirstname(rs.getString("firstname"));
-                client.setLastname(rs.getString("lastname"));
-                client.setAddress(rs.getString("address"));
-                client.setEmail(rs.getString("email"));
-                client.setTel(rs.getString("tel"));
+                getInfo(client, rs);
                 clientList.add(client);
             }
         } catch (Exception e) {
@@ -68,12 +69,7 @@ public class ClientOperations {
             PreparedStatement preparedStatement = MyCon.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                client.setId(rs.getInt("id"));
-                client.setFirstname(rs.getString("firstname"));
-                client.setLastname(rs.getString("lastname"));
-                client.setAddress(rs.getString("address"));
-                client.setEmail(rs.getString("email"));
-                client.setTel(rs.getString("tel"));
+                getInfo(client, rs);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
@@ -176,5 +172,6 @@ public class ClientOperations {
         }
         return client.getFirstname() + " " + client.getLastname();
     }
+
 
 }

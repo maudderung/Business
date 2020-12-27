@@ -4,15 +4,16 @@
 
 package com.company.view;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
 import com.company.SRserviceDashboard.SRDashboard;
 import com.company.adminServiceDashboard.AdminDashboard;
 import com.company.service.Encryption;
 import com.company.service.LoginSession;
-import net.miginfocom.swing.*;
+import com.company.service.Operations.UserOperations;
+import net.miginfocom.swing.MigLayout;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author unknown
@@ -231,6 +232,7 @@ public class Login extends JFrame {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                UserOperations.adminInitialization();
                 Login GUI = new Login();
                 GUI.frame1.setVisible(true);
             }

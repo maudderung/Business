@@ -11,6 +11,8 @@ new FormModel {
 			"alwaysOnTop": true
 			"defaultCloseOperation": 3
 			"minimumSize": new java.awt.Dimension( 625, 39 )
+			"resizable": false
+			"title": "Admin Dashboard"
 			add( new FormContainer( "javax.swing.JSplitPane", new FormLayoutManager( class javax.swing.JSplitPane ) ) {
 				name: "splitPane1"
 				"minimumSize": new java.awt.Dimension( 834, 70 )

@@ -4,11 +4,8 @@
 
 package com.company.adminServiceDashboard.Sales;
 
-import java.awt.event.*;
-import com.company.SRserviceDashboard.SRDashboard;
 import com.company.adminServiceDashboard.AdminDashboard;
 import com.company.objects.Sales;
-import com.company.objects.Users;
 import com.company.service.LogOut;
 import com.company.service.Operations.ClientOperations;
 import com.company.service.Operations.SaleOperations;
@@ -19,6 +16,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 
 /**
