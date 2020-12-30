@@ -128,7 +128,7 @@ public class UserOperations {
                 }
                 JOptionPane.showMessageDialog(frame, "Done.");
             } catch (SQLIntegrityConstraintViolationException exc) {
-                JOptionPane.showMessageDialog(frame, "Product already exists");
+                JOptionPane.showMessageDialog(frame, "Username already exists");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(frame, "Database error:" + e.getMessage());
             }

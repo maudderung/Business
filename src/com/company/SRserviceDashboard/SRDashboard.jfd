@@ -12,6 +12,7 @@ new FormModel {
 			"minimumSize": new java.awt.Dimension( 720, 39 )
 			"background": new java.awt.Color( 255, 255, 255, 255 )
 			"defaultCloseOperation": 3
+			"title": "Sales Representative Dashboard"
 			add( new FormContainer( "javax.swing.JSplitPane", new FormLayoutManager( class javax.swing.JSplitPane ) ) {
 				name: "splitPane1"
 				"foreground": new java.awt.Color( 255, 255, 255, 255 )
@@ -160,6 +161,12 @@ new FormModel {
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "ViewSalesMouseClicked", true ) )
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"column": 7
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label15"
+					"text": "                  "
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 9
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "FacebookShare"

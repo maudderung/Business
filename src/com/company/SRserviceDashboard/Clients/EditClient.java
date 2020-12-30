@@ -21,12 +21,14 @@ import java.util.ArrayList;
 public class EditClient extends JFrame {
     public EditClient() {
         initComponents();
+        initClients();
     }
 
-    private void button1ActionPerformed(ActionEvent e) {
+    private void initClients() {
         ArrayList<Clients> clientList;
         clientList = ClientOperations.readClients(this);
         clientsPane.setText(null);
+        clientComboBox.removeAllItems();
         for (Clients c : clientList) {
             clientComboBox.addItem(c.getId());
             clientsPane.append(c + "\n");
@@ -48,7 +50,7 @@ public class EditClient extends JFrame {
         String fieldTel = telField.getText();
         client=ClientOperations.areFieldsValid(this,client,comboId,fieldFirstname,fieldLastname,fieldEmail,fieldAddress,fieldTel);
         ClientOperations.addEditedClient(this, client);
-
+        initClients();
     }
 
 
@@ -56,7 +58,6 @@ public class EditClient extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - unknown
         panel1 = new JPanel();
-        button1 = new JButton();
         scrollPane1 = new JScrollPane();
         clientsPane = new JTextArea();
         panel4 = new JPanel();
@@ -85,23 +86,12 @@ public class EditClient extends JFrame {
 
         //======== panel1 ========
         {
-            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new
-            javax.swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax
-            .swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java
-            .awt.Font("D\u0069alog",java.awt.Font.BOLD,12),java.awt
-            .Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(new java.beans.
-            PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".
-            equals(e.getPropertyName()))throw new RuntimeException();}});
+            panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder( 0
+            , 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
+            , new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,
+            panel1. getBorder( )) ); panel1. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+            ) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
             panel1.setLayout(new GridLayoutManager(8, 1, new Insets(0, 0, 0, 0), -1, -1));
-
-            //---- button1 ----
-            button1.setText("Display client info");
-            button1.addActionListener(e -> button1ActionPerformed(e));
-            panel1.add(button1, new GridConstraints(0, 0, 1, 1,
-                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-                new Dimension(350, 20), null, null));
 
             //======== scrollPane1 ========
             {
@@ -271,7 +261,6 @@ public class EditClient extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - unknown
     private JPanel panel1;
-    private JButton button1;
     private JScrollPane scrollPane1;
     private JTextArea clientsPane;
     private JPanel panel4;

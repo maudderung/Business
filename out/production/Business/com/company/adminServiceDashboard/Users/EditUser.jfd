@@ -31,8 +31,8 @@ new FormModel {
 					name: "userCombo"
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"anchor": 8
-					"minimumSize": &Dimension0 new java.awt.Dimension( 150, 30 )
-					"preferredSize": &Dimension1 new java.awt.Dimension( 50, 30 )
+					"minimumSize": new java.awt.Dimension( 250, 30 )
+					"preferredSize": &Dimension0 new java.awt.Dimension( 50, 30 )
 					"column": 1
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -52,8 +52,8 @@ new FormModel {
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"column": 1
 					"anchor": 8
-					"minimumSize": #Dimension0
-					"preferredSize": #Dimension1
+					"minimumSize": new java.awt.Dimension( 250, 30 )
+					"preferredSize": #Dimension0
 					"row": 1
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -65,7 +65,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "userNameField"
-					"minimumSize": new java.awt.Dimension( 200, 30 )
+					"minimumSize": new java.awt.Dimension( 250, 30 )
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"column": 1
 					"row": 2
@@ -80,11 +80,12 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JPasswordField" ) {
 					name: "passwordField"
+					"minimumSize": new java.awt.Dimension( 250, 30 )
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"column": 1
 					"row": 3
 					"anchor": 8
-					"minimumSize": new java.awt.Dimension( 200, 30 )
+					"minimumSize": new java.awt.Dimension( 250, 30 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 1

@@ -55,6 +55,14 @@ public class Sales {
         return product;
     }
 
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     @Override
     public String toString() {
         return "" +

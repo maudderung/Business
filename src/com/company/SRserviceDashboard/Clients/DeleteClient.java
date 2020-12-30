@@ -21,12 +21,14 @@ import java.util.ArrayList;
 public class DeleteClient extends JFrame {
     public DeleteClient() {
         initComponents();
+        initClients();
     }
 
-    private void button1ActionPerformed(ActionEvent e) {
+    private void initClients() {
         ArrayList<Clients> clientList;
         clientList = ClientOperations.readClients(this);
         clientsPane.setText(null);
+        clientComboBox.removeAllItems();
         for (Clients c : clientList) {
             clientComboBox.addItem(c.getId());
             clientsPane.append(c + "\n");
@@ -41,6 +43,7 @@ public class DeleteClient extends JFrame {
     private void DeleteButtonActionPerformed(ActionEvent e) {
         int comboId = (int) clientComboBox.getSelectedItem();
         ClientOperations.deleteClient(this,comboId);
+        initClients();
     }
 
 
@@ -48,7 +51,6 @@ public class DeleteClient extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - unknown
         panel1 = new JPanel();
-        button1 = new JButton();
         scrollPane1 = new JScrollPane();
         clientsPane = new JTextArea();
         panel4 = new JPanel();
@@ -60,7 +62,7 @@ public class DeleteClient extends JFrame {
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Edit client");
+        setTitle("Delete client");
         setMinimumSize(new Dimension(450, 39));
         setResizable(false);
         var contentPane = getContentPane();
@@ -68,22 +70,14 @@ public class DeleteClient extends JFrame {
 
         //======== panel1 ========
         {
-            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.
-            EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER,javax.swing
-            .border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),
-            java.awt.Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(new java.beans.PropertyChangeListener()
-            {@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))
-            throw new RuntimeException();}});
+            panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
+            . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder
+            . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .
+            awt .Font .BOLD ,12 ), java. awt. Color. red) ,panel1. getBorder( )) )
+            ; panel1. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+            ) {if ("borde\u0072" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
+            ;
             panel1.setLayout(new GridLayoutManager(8, 1, new Insets(0, 0, 0, 0), -1, -1));
-
-            //---- button1 ----
-            button1.setText("Display client info");
-            button1.addActionListener(e -> button1ActionPerformed(e));
-            panel1.add(button1, new GridConstraints(0, 0, 1, 1,
-                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-                new Dimension(350, 20), null, null));
 
             //======== scrollPane1 ========
             {
@@ -163,7 +157,6 @@ public class DeleteClient extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - unknown
     private JPanel panel1;
-    private JButton button1;
     private JScrollPane scrollPane1;
     private JTextArea clientsPane;
     private JPanel panel4;

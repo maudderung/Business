@@ -132,6 +132,14 @@ public class ProductOperations {
         }
         return false;
     }
+    public static boolean isSaleValid(JFrame frame, int quantitySale, String product) {
+        int quantityCalculated = (getQuantityProduct(frame, product)) - quantitySale;
+        if(quantityCalculated>=0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public static void deleteProduct(JFrame frame, int id) {
         String query = "DELETE FROM product WHERE id=" + id;

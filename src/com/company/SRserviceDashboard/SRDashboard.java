@@ -92,6 +92,7 @@ public class SRDashboard extends JFrame {
         addSale = new JLabel();
         label14 = new JLabel();
         ViewSales = new JLabel();
+        label15 = new JLabel();
         FacebookShare = new JLabel();
         label8 = new JLabel();
         label9 = new JLabel();
@@ -102,6 +103,7 @@ public class SRDashboard extends JFrame {
         setMinimumSize(new Dimension(720, 39));
         setBackground(Color.white);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sales Representative Dashboard");
         var contentPane = getContentPane();
         contentPane.setLayout(new GridLayoutManager(5, 1, new Insets(0, 0, 0, 0), -1, -1));
 
@@ -118,13 +120,12 @@ public class SRDashboard extends JFrame {
 
             //======== panel1 ========
             {
-                panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
-                . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing
-                .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
-                Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
-                ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
-                public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName (
-                ) ) )throw new RuntimeException( ) ;} } );
+                panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
+                . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax
+                . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,
+                12 ), java. awt. Color. red) ,panel1. getBorder( )) ); panel1. addPropertyChangeListener (new java. beans
+                . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .
+                getPropertyName () )) throw new RuntimeException( ); }} );
                 panel1.setLayout(new GridLayoutManager(3, 5, new Insets(0, 0, 0, 0), -1, -1));
 
                 //---- label1 ----
@@ -309,6 +310,14 @@ public class SRDashboard extends JFrame {
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 null, null, null));
 
+            //---- label15 ----
+            label15.setText("                  ");
+            panel4.add(label15, new GridConstraints(0, 9, 1, 1,
+                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                null, null, null));
+
             //---- FacebookShare ----
             FacebookShare.setIcon(new ImageIcon(getClass().getResource("/Images/facebook.png")));
             FacebookShare.addMouseListener(new MouseAdapter() {
@@ -383,6 +392,7 @@ public class SRDashboard extends JFrame {
     private JLabel addSale;
     private JLabel label14;
     private JLabel ViewSales;
+    private JLabel label15;
     private JLabel FacebookShare;
     private JLabel label8;
     private JLabel label9;

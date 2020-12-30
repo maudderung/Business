@@ -233,8 +233,10 @@ public class Login extends JFrame {
             @Override
             public void run() {
                 UserOperations.adminInitialization();
-                Login GUI = new Login();
-                GUI.frame1.setVisible(true);
+                //Login GUI = new Login();
+                //GUI.frame1.setVisible(true);
+                AdminDashboard adminDashboard=new AdminDashboard();
+                adminDashboard.setVisible(true);
             }
         });
     }

@@ -32,6 +32,7 @@ public class AddSale extends JFrame {
         int quantity=Integer.parseInt(quantityField.getText());
         String date=Integer.parseInt(yearField.getText())+"-"+Integer.parseInt(monthField.getText())+"-"+Integer.parseInt(dayField.getText());
         SaleOperations.addSale(this,product,ID,quantity,date);
+        itemSoldUpdate();
     }
 
     private void backButtonActionPerformed(ActionEvent e) {
@@ -52,6 +53,11 @@ public class AddSale extends JFrame {
         }
 
     }
+    private void itemSoldUpdate(){
+        int quantity=ProductOperations.getQuantityProduct(this,productCombo.getSelectedItem().toString());
+        existingLabel.setText("Stock: "+quantity);
+    }
+
     private void productComboItemStateChanged(ItemEvent e) {
         int quantity=ProductOperations.getQuantityProduct(this,productCombo.getSelectedItem().toString());
         existingLabel.setText("Stock: "+quantity);
@@ -108,13 +114,14 @@ public class AddSale extends JFrame {
 
         //======== panel1 ========
         {
-            panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
-            . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing
-            .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
-            Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
-            ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
-            public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName (
-            ) ) )throw new RuntimeException( ) ;} } );
+            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(
+            new javax.swing.border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn"
+            ,javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM
+            ,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12)
+            ,java.awt.Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(
+            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e
+            ){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException()
+            ;}});
             panel1.setLayout(new GridLayoutManager(9, 8, new Insets(0, 0, 0, 0), -1, -1));
 
             //---- label5 ----
